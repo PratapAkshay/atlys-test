@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const ModuleContainer = styled.div`
   width: 463px;
-  height: 420px;
   border-radius: 8px;
   padding: 40px 24px;
   box-sizing: border-box;

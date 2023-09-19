@@ -4,6 +4,7 @@ export const CommentSection = styled.div`
     border-radius: 8px;
     background: #191920;
     margin: 14px 0;
+    display: flex;
 
     .reaction{
         display: inline-block;
@@ -23,9 +24,9 @@ export const CommentSection = styled.div`
     }
 
     .comment{
-        display: inline-block;
         width: 86%;
-        padding: 16px 0;
+        display: flex;
+        align-items: center;
         vertical-align: top;
     }
 
@@ -34,3 +35,15 @@ export const CommentSection = styled.div`
         line-height: 150% !important;
     }
 `;
+
+export const CommentInput = styled.input`
+    color: #7F8084;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+`; 

@@ -5,6 +5,8 @@ import CommentSection from "../CommentSection";
 import * as styles from "./index_styles";
 import bubble from "../../utils/assets/icons/Chat_Bubble.svg";
 
+const message = "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.";
+
 const CommentUserCard = () => {
     return <styles.CommentUserCard className="mb-12">
         <div className="userCardHead">
@@ -20,7 +22,7 @@ const CommentUserCard = () => {
             </div>
         </div>
         <div className="commentSection">
-            <CommentSection></CommentSection>
+            <CommentSection emoji="👋" message={message}></CommentSection>
         </div>
         <div className="commentCount"><img src={bubble} alt="chat_icon"/><ActionLabel textSize="14px">24 Comments</ActionLabel></div>
     </styles.CommentUserCard>

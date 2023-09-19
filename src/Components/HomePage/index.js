@@ -1,8 +1,33 @@
-import React from "react";
-import { HighlightLabel, ActionLabel } from "../../utils/common_styles";
+import React, { useState } from "react";
+import { HighlightLabel, ActionLabel, PopUpContainer } from "../../utils/common_styles";
 import CommentUserCard from "../../ReusableComponents/CommentUserCard";
 import * as style from "./index_styles";
+import CreatePost from "../../ReusableComponents/CreatePost";
+import RegistrationModal from "../RegistrationModal";
+import LoginModal from "../LoginModal";
+
 const HomePage = () => {
+
+  const [showRegistrationPopOver,setShowRegistrationPopOver] = useState(false);
+  const [modaltoDisplay, setModalToDisplay] = useState("register");
+
+  const submitPosthandler = () => {
+    setShowRegistrationPopOver(prev => !prev);
+  }
+
+  const registerOnCloseHandler = () => {
+    setShowRegistrationPopOver(false);
+    setModalToDisplay("register");
+  }
+
+  const onRegisterClickInLoginModal = () => {
+    setModalToDisplay("register");
+  }
+
+  const onLoginClickInRegisterModal = () => {
+    setModalToDisplay("login");
+  }
+
   return (
     <style.HomePage>
       <div>
@@ -16,11 +41,20 @@ const HomePage = () => {
           </ActionLabel>
         </div>
         <div>
+          <CreatePost submitPost={submitPosthandler}/>
           <CommentUserCard />
           <CommentUserCard />
           <CommentUserCard />
           <CommentUserCard />
         </div>
+        {showRegistrationPopOver && <PopUpContainer>
+          <div>
+            {modaltoDisplay === "register" ? 
+              <RegistrationModal loginClickHandler={() => onLoginClickInRegisterModal()} onClose={() => registerOnCloseHandler()}/> :
+              <LoginModal registerClickHandler={() => onRegisterClickInLoginModal()} onClose={() => registerOnCloseHandler()}/>
+            }
+          </div>
+        </PopUpContainer>}
       </div>
     </style.HomePage>
   );

@@ -51,3 +51,26 @@ export const TopWhiteHeaderLable = styled.label`
   font-weight: 600;
   line-height: normal;
 `;
+
+export const ActionPar = styled.p`
+  color: #7f8084;
+  font-family: Inter;
+  cursor: ${({ cursor }) => (cursor ? cursor : undefined)};
+  font-size: ${({ textSize }) => (textSize ? textSize : "12px")};
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+`;
+
+export const PopUpContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2.5px);
+`;

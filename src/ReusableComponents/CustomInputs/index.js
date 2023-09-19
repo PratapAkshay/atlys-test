@@ -17,7 +17,7 @@ const CustomInputs = ({firstLabel, secondLabel, inputType, placeHolderText, side
                 type={inputType ? inputType : "text"} 
                 placeholder={placeHolderText ? placeHolderText : ""} 
             />
-            {sideIcon && <img className="sideIcon" src={sideIcon} slt="eye_Icon"/>}
+            {sideIcon && <img className="sideIcon" src={sideIcon} alt="eye_Icon"/>}
         </div>
     </CommonInput>
 };

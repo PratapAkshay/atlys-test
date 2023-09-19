@@ -1,18 +1,18 @@
-import { ActionLabel } from "../../utils/common_styles";
+import { ActionPar } from "../../utils/common_styles";
 import * as styles from "./index_styles";
 
-const CommentSection = () => {
+const CommentSection = ({message, placeHolder, emoji, editable}) => {
   return (
     <styles.CommentSection>
       <div className="reaction">
-        <span>👋</span>
+        <span>{emoji ? emoji : " "}</span>
       </div>
       <div className="comment">
-        <ActionLabel>
-          Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-          sint. Velit officia consequat duis enim velit mollit. Exercitation
-          veniam consequat sunt nostrud amet.
-        </ActionLabel>
+        {editable ? <styles.CommentInput placeholder={placeHolder}/> :
+        <ActionPar textSize="16px">
+          {message ? message : placeHolder ? placeHolder : null}
+        </ActionPar>
+        }
       </div>
     </styles.CommentSection>
   );

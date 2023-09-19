@@ -1,7 +1,7 @@
 import * as Styles from "./index_styles";
 import CustomInputs from "../../ReusableComponents/CustomInputs";
-import cross from "../../utils/assets/icons/Cross.svg";
 import eye from "../../utils/assets/icons/eye.svg";
+import cross from "../../utils/assets/icons/Cross.svg";
 import {
   CommonButton,
   ActionLabel,
@@ -10,7 +10,7 @@ import {
   TopWhiteHeaderLable,
 } from "../../utils/common_styles";
 
-const LoginModal = ({ onClick, onClose, registerClickHandler }) => {
+const RegistrationModal = ({ onClick, onClose, loginClickHandler }) => {
   return (
     <Styles.ModuleContainer>
       {onClose && (
@@ -19,40 +19,42 @@ const LoginModal = ({ onClick, onClose, registerClickHandler }) => {
         </div>
       )}
       <div className="topHeadContainer mb-8">
-        <TopHeaderLable textSize="14px">Welcome Back</TopHeaderLable>
+        <TopHeaderLable textSize="14px">SIGN UP</TopHeaderLable>
       </div>
       <div className="topHeadContainer mb-45">
         <TopWhiteHeaderLable textSize="18px">
-          Login into your account
+          Create an account to continue
         </TopWhiteHeaderLable>
       </div>
       <div>
+        <CustomInputs firstLabel={"Email"} placeHolderText="Enter your email" />
         <CustomInputs
-          firstLabel={"Email and Username"}
-          placeHolderText="Enter your email or username"
+          firstLabel={"Username"}
+          placeHolderText="Choose a preferred username"
         />
         <CustomInputs
           sideIcon={eye}
           type="password"
-          firstLabel={"Enter your password"}
-          placeHolderText="password"
-          secondLabel="Forgot passward ?"
+          firstLabel={"Password"}
+          placeHolderText="Choose a strong password"
         />
         <div className="submitButtonContainer">
           <CommonButton
             onClick={onClick ? () => onClick() : () => {}}
             width="100%"
           >
-            Login now
+            Continue
           </CommonButton>
         </div>
         <ActionLabel>
-          Not registered yet?{" "}
-          <HighlightLabel onClick={registerClickHandler} cursor="pointer">Register →</HighlightLabel>
+          Already have an account?{" "}
+          <HighlightLabel onClick={loginClickHandler} cursor="pointer">
+            Login →
+          </HighlightLabel>
         </ActionLabel>
       </div>
     </Styles.ModuleContainer>
   );
 };
 
-export default LoginModal;
+export default RegistrationModal;

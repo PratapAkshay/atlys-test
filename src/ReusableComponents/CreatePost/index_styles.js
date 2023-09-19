@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-export const CommentUserCard = styled.div`
+export const CreatePost = styled.div`
     border-radius: 8px;
     padding: 24px 20px;
     box-sizing: border-box;
@@ -20,5 +20,9 @@ export const CommentUserCard = styled.div`
     .commentCount div{
         display: inline-block;
         vertical-align: text-top;
+    }
+
+    .postContainer{
+        text-align: right;
     }
 `
